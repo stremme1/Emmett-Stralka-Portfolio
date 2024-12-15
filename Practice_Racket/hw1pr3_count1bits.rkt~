@@ -1,0 +1,8 @@
+#lang racket
+
+(require rackunit)
+
+(require "hw1pr3_count1bits.rkt")
+(provide power)
+(provide fast-power) 
+

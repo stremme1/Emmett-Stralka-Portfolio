@@ -1,0 +1,12 @@
+#lang racket
+
+(provide superreverse)
+
+
+;; superreverse: TODO: delete this note and complete the comment
+;;   input:  TODO: delete this note and complete the comment
+;;   output: TODO: delete this note and complete the comment
+;; Use higher-order functions (no recursion!)
+(define (superreverse L)
+  0)
+

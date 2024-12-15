@@ -1,0 +1,9 @@
+100 qubits could hold 2^100 states.
+280 qubits could hold 2^280 states.
+in python this could be written at 2**n, where n is the number of qubits
+
+Quantum computation is about building and controlling a “programmable molecule,” then using it to simulate and ask questions of nature.
+
+Quantum computers are based on the principles of quantum mechanics, which are probabilistic in nature. This means that the outcome of a quantum computation is not always deterministic, but is instead based on the laws of probability. Traditional computers use pseudo-random number generators, which are algorithmically generated and are not truly random. Quantum computers, on the other hand, can generate true random numbers using the principles of quantum mechanics. Quantum computing relies on random-ness to simutate nature which is random. One way to generate a true random number is to measure the spin of an electron. The spin of an electron is a quantum mechanical property that can be either up or down. Measuring the spin of an electron will always give a random result, which can be used to generate a true random number. Another way to generate a true random number is to measure the phase of a light beam. The phase of a light beam is also a quantum mechanical property that can be measured. Measuring the phase of a light beam will also always give a random result, which can be used to generate a true random number. 
+Quantum computers can be used to simulate nature and ask questions that classical computers cannot. For example, quantum computers can be used to study chemical reactions and find new medicines. They can also be used to solve complex mathematical problems, such as factoring large numbers.
+The potential applications of quantum computing are numerious, and the technology is still in its infancy. As quantum computers become stronger with more quibits, they will be able to solve increasingly complex problems and revolutionize the way we live and work.

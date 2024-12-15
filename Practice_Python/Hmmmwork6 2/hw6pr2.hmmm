@@ -1,0 +1,19 @@
+# hw6 problem 2
+#
+# Name(s): Emmett Straka
+#This is a power Function
+
+# This is a placeholder whose code you'll replace:
+00 read r1         # Get base number from user into r1
+01 read r2           # Get power number from user into r2
+02 setn r3 1
+03 jeqzn r2 09    # Put our result into r2
+04 mul r3 r3 r1 
+05 nop
+06 addn r2 -1      # Make r2 = r2 - 1
+07 jumpn 03         # Jump back to line 3
+08 nop
+09 write r3         # Write out the result, r2
+10 halt
+
+

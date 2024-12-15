@@ -1,0 +1,13 @@
+# Maze Problem
+# Hug Right Wall
+0 *x** -> E 3 
+0 *E** -> x 1
+
+1 x*** -> N 0
+1 N*** -> x 2
+
+2 **x* -> W 1
+2 **W* -> x 3
+
+3 ***x -> S 2
+3 ***S -> x 0

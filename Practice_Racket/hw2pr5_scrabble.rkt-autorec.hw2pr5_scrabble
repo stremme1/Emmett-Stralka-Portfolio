@@ -1,0 +1,60 @@
+#lang racket
+
+(provide subbag?)
+
+;;   inputs: element and el
+;;           element - the element to count in the list
+;;           el - the list
+;;   output: the count of occurrences of the element in the list
+(define (count-element element el)
+  (cond
+    [(empty? el) 0]                             ; Base case an empty list
+    [(equal? (first el) element)                ; If the first element equals 
+     (+ 1 (count-element element (rest el)))]  ; Add 1 and recurse rest 
+    [else (count-element element (rest el))]))  ; If not equal, continue count the rest
+
+;; subbag?: Checks if S is a subbag of B
+;;   inputs: S and B lists
+;;           S sublist 
+;;           B the list checkk
+;;   output: #t if S is a subbag of B, F otherwise
+(define (subbag? S B)
+  (cond
+    [(null? S) #t]                            ; Base case: 
+    [(null? B) #f]                            ; If B is empty, s no subbag
+    [(>= (count-element (first S) B) (count-element (first S) S))
+     (subbag? (rest S) B)]                    ; recuse check the rest of S and B
+    [else #f]))                                ; it's not a subbag F
+; got this from online yours was terrible
+;https://stackoverflow.com/questions/32235033/creating-a-python-scrabble-function-that-takes-a-string-as-input-and-returns-a-s
+(define score
+  '((#\a 1) (#\c 3) (#\b 3) (#\e 1) (#\d 2) (#\g 2)
+    (#\f 4) (#\i 1) (#\h 4) (#\k 5) (#\j 8) (#\m 3)
+    (#\l 1) (#\o 1) (#\n 1) (#\q 10) (#\p 3) (#\s 1)
+    (#\r 1) (#\u 1) (#\t 1) (#\w 4) (#\v 4) (#\y 4)
+    (#\x 8) (#\z 10)))
+
+;; scrabble-score-helper: Helper function for calculating Scrabble score
+;;   inputs: word
+;;           word - the word to calculate the score for
+;;   output: the Scrabble score for the given word
+(define (scrabble-word word)
+  (cond
+    [(null? word) 0]                                    ; Base case an empty word 0 
+    [else
+     (+ (cdr (assoc (car word) score))                 ; Add the score of the first letter 
+        (scrabble-word (cdr word)))]))          ; recurse and calculate the score for the rest 
+
+;; scrabble-score: Calculates the Scrabble score for a word
+;;   inputs: word
+;;           word givenr
+;;   output: the Scrabble score for the given word
+(define (scrabble-score word)
+  (scrabble-word (string->list word)))         
+
+
+
+
+
+  
+

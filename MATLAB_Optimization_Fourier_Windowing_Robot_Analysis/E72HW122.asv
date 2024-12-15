@@ -1,0 +1,40 @@
+% Define zipline parameters
+horizontal_span = 500; % in meters
+vertical_drop = 40; % in meters
+cable_weight = 15; % in N/m
+cable_tension = 35000; % in N
+L = tan(40/500);
+
+
+% Define parameters from the equations
+
+a = tan(theta_i);
+b = tan(theta_i) - tan(theta_f);
+gamma = 1;
+
+% Define the number of points to plot
+num_points = 100;
+
+% Initialize arrays to store x and y coordinates
+x = zeros(num_points, 1);
+y = zeros(num_points, 1);
+
+% Compute coordinates along the zipline
+for i = 1:num_points
+    f = (i - 1) / (num_points - 1); % Normalize f from 0 to 1
+    xtilde = (1/b)*log((a-b*f-b*gamma+sqrt(1+(a-b*f-b*gamma)^2))/(a-b*gamma-b+sqrt(1+(a-b*gamma-b)^2)));
+    ytilde = (sqrt(1+(a-b*f-b*gamma)^2)-sqrt(1+(a-b*gamma-b)^2))/b;
+    x(i) = xtilde * horizontal_span; % Scale x to match the actual horizontal span
+    y(i) = ytilde * vertical_drop; % Scale y to match the actual vertical drop
+end
+
+% Plot the zipline profile
+plot(x, y, 'b-', 'LineWidth', 2);
+hold on;
+
+% Label the plot
+xlabel('Horizontal Distance (m)');
+ylabel('Vertical Distance (m)');
+title('Zipline Profile without Rider');
+legend('Zipline');
+grid on;
